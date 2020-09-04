@@ -7,6 +7,7 @@ export default class PlantList extends Component {
     super(props);
     this.state = { 
       plants: [],
+      // filteredPlants: [],
       search: ''
      }
   }
@@ -28,9 +29,24 @@ export default class PlantList extends Component {
   }
 
   handleChange = (evt) => {
-    console.log(evt.target.value)
     this.setState({ search: evt.target.value })
   }
+
+  // componentDidUpdate(search) {
+  //     if (this.state.search.length > 0) {
+  //       console.log("search run")
+  //       const re = new RegExp(search, 'i')
+  //       const filtered = this.state.plants.filter( (p) => {
+  //         return(
+  //           p.name.match(re)
+  //         )
+  //       })
+  //       console.log(filtered);
+  //       this.setState({
+  //         filteredPlants: filtered
+  //       })
+  //     }
+  // }
 
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
