@@ -6,7 +6,8 @@ export default class PlantList extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      plants: []
+      plants: [],
+      search: ''
      }
   }
 
@@ -30,6 +31,17 @@ export default class PlantList extends Component {
   render() {
     return (
       <main className="plant-list">
+        <div className={'search-row'}>
+          <label className={'search-box'}>
+            <input
+              placeholder='Search'
+              name='search'
+              type='text'
+              value={this.state.search}
+              // onChange={onChange}
+            />
+          </label>
+        </div>
         {this.state?.plants?.map((plant) => (
           <div className="plant-card" key={plant.id}>
             <img className="plant-image" src={plant.img} alt={plant.name} />
