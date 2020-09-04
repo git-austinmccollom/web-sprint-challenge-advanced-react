@@ -27,6 +27,11 @@ export default class PlantList extends Component {
       })
   }
 
+  handleChange = (evt) => {
+    console.log(evt.target.value)
+    this.setState({ search: evt.target.value })
+  }
+
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
   render() {
     return (
@@ -38,7 +43,7 @@ export default class PlantList extends Component {
               name='search'
               type='text'
               value={this.state.search}
-              // onChange={onChange}
+              onChange={this.handleChange}
             />
           </label>
         </div>
